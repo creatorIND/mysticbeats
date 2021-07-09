@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Cardo&family=El+Messiri:wght@500&family=Grenze+Gotisch:wght@100&family=Josefin+Sans:wght@300&family=Pacifico&family=Spartan:wght@300&display=swap");
+
+* {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.navbar-brand {
+	font-size: 1.5rem;
+	font-family: "Pacifico";
+	text-shadow: 2px 2px 2px #000000;
+}
+
+footer,
+.nav-link {
+	font-family: "Josefin Sans";
+	font-size: 1.1rem;
+}
+
+.nav-link:hover {
+	border-top: 1px solid white;
+	border-radius: 15px;
+}
+
+h1 {
+	font-family: "El Messiri";
+	text-shadow: 2px 2px 2px black;
+}
+
+.list-group-item {
+	color: white;
+	text-shadow: 1px 1px black;
+	border-bottom: 2px solid #932432;
+	font-family: "Spartan";
+	border-radius: 15px;
+}
+
+.middle {
+	border-left: 7px solid #932432;
+	border-right: 7px solid #932432;
+	border-radius: 15px;
+}
+
+.active,
+.oneAudio:hover {
+	background-color: rgba(147, 36, 50, 0.5);
+	border-radius: 15px;
+	cursor: pointer;
+}
+
+.img-wrap {
+	position: relative;
+	display: inline-block;
+}
+
+.img-name {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	color: #fff;
+	visibility: hidden;
+	opacity: 0;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+
+	/* transition effect. not necessary */
+	transition: opacity 0.2s, visibility 0.2s;
+}
+
+.img-wrap:hover .img-name {
+	visibility: visible;
+	opacity: 1;
+}
+
+.img-name {
+	transition: 0.2s;
+	transform: translateY(1em);
+	text-align: center;
+}
+
+.img-wrap:hover .img-name {
+	transform: translateY(0);
+}
+
+.dropdown-item:active {
+	background-color: #932432;
+}
+
+progress[value] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	width: 0;
+	min-width: 100%;
+	height: 10px;
+	border-radius: none;
+}
+
+progress[value]::-webkit-progress-bar {
+	background-color: #212529;
+	border: 2px solid black;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+progress[value]::-moz-progress-bar {
+	background-color: #212529;
+	border: 2px solid black;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+progress[value]::-webkit-progress-value {
+	background-color: #932432;
+}
+
+#player-play,
+#player-prev,
+#player-next {
+	font-size: 3vw;
+	cursor: pointer;
+}
+
+#player-card,
+#player-image {
+	border-radius: 50px;
+}
+
+.artist-show h1 {
+	font-family: "Grenze Gotisch";
+	text-shadow: 3px 5px 2px #932432;
+}
+
+.artist-show img {
+	height: 70vh;
+	width: 90%;
+	object-fit: cover;
+	border: 5px inset #932432;
+	border-radius: 25px;
+}
+
+.artist-show p {
+	text-align: justify;
+	font-family: "Cardo";
+	font-size: 20px;
+}
+
+.st-elem {
+	z-index: 1;
+	top: 70px;
+}
+
+#showArtImg {
+	width: 100%;
+	height: 45vh;
+	object-fit: cover;
+}
+
+@media screen and (max-width: 576px) {
+	#showArtImg {
+		width: 100%;
+		height: 75vh;
+		object-fit: cover;
+	}
+}

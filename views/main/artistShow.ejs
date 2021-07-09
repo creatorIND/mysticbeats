@@ -1,0 +1,49 @@
+<% layout("./layouts/boilerplate") %>
+<div class="row artist-show">
+	<h1 class="display-4 text-center text-light text-shadow mb-3">
+		<%= artist.name %> (<%= artist.songs[0].language %>)
+	</h1>
+	<div class="col-md-4 text-light mb-3 text-center">
+		<img class="sticky-top st-elem" src="<%= artist.image %>" alt="" />
+	</div>
+	<div class="col-md-8 text-light text-center">
+		<div class="row">
+			<p><%= artist.details %></p>
+		</div>
+		<div class="row mb-3 text-center p-4">
+			<ul class="list-group">
+				<% for(let i = 0; i < artist.songs.length; i++) { %>
+				<li
+					class="list-group-item song-list bg-dark mb-2"
+					style="border-radius: 0"
+				>
+					<div
+						class="row py-2 oneAudio"
+						onclick="togglePlay(document.getElementById('music<%= (i + 1) %>'));"
+					>
+						<div class="col-10 text-start">
+							<%= artist.songs[i].title %>
+						</div>
+						<div class="col-2 text-center">
+							<audio id="music<%= (i + 1) %>" preload="metadata">
+								<source
+									src="<%= artist.songs[i].file %>"
+									type="audio/mpeg"
+								/>
+							</audio>
+							<span
+								class="material-icons-round"
+								style="font-size: 17px"
+							></span>
+						</div>
+					</div>
+				</li>
+				<% } %>
+			</ul>
+		</div>
+	</div>
+	<script>
+		const songs = <%- JSON.stringify(artist.songs) %>
+	</script>
+	<script src="/javascripts/artistShow.js"></script>
+</div>
