@@ -1,9 +1,7 @@
 <% layout("./layouts/boilerplate") %>
 <div class="row">
 	<div class="middle col-md-9 mb-3">
-		<h1 class="display-4 text-center text-light text-shadow mb-3">
-			Our Collections
-		</h1>
+		<h1 class="text-center text-light text-shadow mb-3">Our Collections</h1>
 		<ul class="list-group">
 			<% for(let i = 0; i < songs.length; i++) { %>
 			<li class="list-group-item song-list bg-dark mb-2">
@@ -36,15 +34,7 @@
 	<div class="col-md-3 text-light d-none d-md-block d-lg-block">
 		<div
 			id="player-card"
-			class="
-				card
-				sticky-top
-				st-elem
-				bg-dark
-				border border-danger
-				mb-3
-				text-center
-			"
+			class="card sticky-top st-elem bg-dark border border-danger mb-3 text-center"
 		>
 			<img
 				id="player-image"

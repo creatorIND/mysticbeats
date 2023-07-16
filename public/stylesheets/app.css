@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Cardo&family=El+Messiri:wght@500&family=Grenze+Gotisch:wght@100&family=Josefin+Sans:wght@300&family=Pacifico&family=Spartan:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;700&display=swap");
 
 * {
 	-webkit-touch-callout: none;
@@ -6,6 +7,10 @@
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+
+	font-family: "Merriweather Sans";
+	font-weight: 400;
+	box-sizing: border-box;
 }
 
 .navbar-brand {
@@ -14,45 +19,23 @@
 	text-shadow: 2px 2px 2px #000000;
 }
 
-footer,
-.nav-link {
-	font-family: "Josefin Sans";
-	font-size: 1.1rem;
-}
-
-.nav-link:hover {
-	/* border-top: 1px solid white; */
-	border-radius: 15px;
-}
-
 h1 {
-	font-family: "El Messiri";
 	text-shadow: 2px 2px 2px black;
 }
 
 .list-group-item {
 	color: white;
 	text-shadow: 1px 1px black;
-	border-bottom: 2px solid #932432;
-	font-family: "Spartan";
-	border-radius: 15px;
-}
-
-.middle {
-	border-left: 7px solid #932432;
-	border-right: 7px solid #932432;
-	border-radius: 15px;
 }
 
 .active,
 .oneAudio:hover {
-	background-color: rgba(147, 36, 50, 0.5);
-	/* border-radius: 15px; */
+	background-color: rgba(201, 24, 74, 0.5);
 	cursor: pointer;
 }
 
 .dropdown-item:active {
-	background-color: #932432;
+	background-color: #c9184a;
 }
 
 progress[value] {
@@ -78,7 +61,7 @@ progress[value]::-moz-progress-bar {
 }
 
 progress[value]::-webkit-progress-value {
-	background-color: #932432;
+	background-color: #c9184a;
 }
 
 #player-play,
@@ -175,22 +158,23 @@ progress[value]::-webkit-progress-value {
 }
 
 .artist-show h1 {
-	font-family: "Grenze Gotisch";
-	text-shadow: 3px 5px 2px #932432;
+	/* font-family: "Grenze Gotisch"; */
+	font-size: 40px;
+	text-shadow: 1px 4px 2px #c9184a;
 }
 
 .artist-show img {
 	height: 70vh;
 	width: 90%;
 	object-fit: cover;
-	border: 5px inset #932432;
+	border: 5px inset #c9184a;
 	border-radius: 25px;
 }
 
 .artist-show p {
 	text-align: justify;
-	font-family: "Cardo";
-	font-size: 20px;
+	font-size: 18px;
+	font-weight: 300;
 }
 
 .st-elem {
