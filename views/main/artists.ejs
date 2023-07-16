@@ -1,13 +1,53 @@
 <% layout("./layouts/boilerplate") %>
-<div class="card-group row row-cols-auto row-cols-lg-5 row-cols-md-3 row-cols-sm-2">
-    <% for(let artist of artists) { %>
+<!-- <div
+	class="card-group row row-cols-auto row-cols-lg-5 row-cols-md-3 row-cols-sm-2"
+>
+	<% for(let artist of artists) { %>
 	<div class="col mb-3">
-        <div class="card mx-2 border border-danger bg-dark img-wrap">
-            <a href="/artists/<%= artist._id %>">
-                <img id="showArtImg" src="<%= artist.image %>" class="card-img-top img" />
-                <p class="img-name"><%= artist.name %></p>
+		<div class="card mx-2 border border-danger bg-dark img-wrap w-100">
+			<a href="/artists/<%= artist._id %>">
+				<img
+					id="showArtImg"
+					src="<%= artist.image %>"
+					class="card-img-top img"
+				/>
+				<p class="img-name"><%= artist.name %></p>
+			</a>
+		</div>
+	</div>
+
+	<% } %>
+</div> -->
+<!-- <div class="artists">
+	<% for(let artist of artists) { %>
+	<div class="artist-item img-wrap">
+		<a class="" href="/artists/<%= artist._id %>">
+			<img
+				id="showArtImg"
+				src="https://res.cloudinary.com/fedupnow/image/upload/c_scale,h_248,w_304/v1625783326/MysticBeats/Images/ArijitSingh_vhnb9v.jpg"
+				class="artist-img"
+			/>
+			<p class="img-name"><%= artist.name %></p>
+		</a>
+	</div>
+	<% } %>
+</div> -->
+<div class="artists">
+	<% for(let artist of artists) { %>
+	<div class="artist-item">
+		<div class="img-wrap">
+            <a class="" href="/artists/<%= artist._id %>">
+                <img
+                    class="artist-img"
+                    src="<%= artist.image %>"
+                ></img>
+                <p class="img-name">
+                    <span class="img-name-bg">
+                        <%= artist.name %>
+                    </span>
+                </p>
             </a>
         </div>
-    </div>
-    <% } %>
+	</div>
+	<% } %>
 </div>
