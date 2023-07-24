@@ -19,6 +19,23 @@
 	text-shadow: 2px 2px 2px #000000;
 }
 
+.navbar-nav {
+	margin-left: 50px;
+}
+
+.navbar-nav > * {
+	margin-right: 5px;
+}
+
+@media (max-width: 992px) {
+	.navbar-nav {
+		margin-left: 0;
+	}
+	.navbar-nav {
+		margin-right: 0;
+	}
+}
+
 h1 {
 	text-shadow: 2px 2px 2px black;
 }
