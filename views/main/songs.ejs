@@ -15,12 +15,11 @@
 						<%= songs[i].artist.name %>
 					</div>
 					<div class="col-2 text-center">
-						<audio id="music<%= (i + 1) %>" preload="metadata">
-							<source
-								src="<%= songs[i].file %>"
-								type="audio/mpeg"
-							/>
-						</audio>
+						<audio
+							data-src="<%= songs[i].file %>"
+							id="music<%= (i + 1) %>"
+							preload="metadata"
+						></audio>
 						<span
 							style="font-size: 17px"
 							class="material-icons-round"
