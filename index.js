@@ -57,7 +57,9 @@ app.get(
 	catchAsync(async (req, res) => {
 		const songs = await Song.find({}).populate("artist");
 		songs.sort(dynamicSort("title"));
-		res.render("main/songs", { songs });
+
+		const title = "Our Collections";
+		res.render("main/songs", { songs, title });
 	})
 );
 
@@ -84,9 +86,12 @@ app.get(
 	catchAsync(async (req, res) => {
 		let { lang } = req.params;
 		lang = lang.charAt(0).toUpperCase() + lang.slice(1);
+		const title = `${lang} Songs`;
+
 		const songs = await Song.find({ language: lang }).populate("artist");
 		songs.sort(dynamicSort("title"));
-		res.render("main/language", { songs, lang });
+
+		res.render("main/songs", { songs, title });
 	})
 );
 
