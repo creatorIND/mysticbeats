@@ -8,7 +8,6 @@ const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
 const ejsMate = require("ejs-mate");
-// const dbUrl = "mongodb://localhost:27017/mystic-beats";
 const dbUrl = process.env.DB_URL;
 const catchAsync = require("./utils/catchAsync");
 const ExpressError = require("./utils/ExpressError");
@@ -35,19 +34,6 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
-function dynamicSort(property) {
-	let sortOrder = 1;
-	if (property[0] === "-") {
-		sortOrder = -1;
-		property = property.substr(1);
-	}
-	return function (a, b) {
-		const result =
-			a[property] < b[property] ? -1 : a[property] > b[property] ? 1 : 0;
-		return result * sortOrder;
-	};
-}
-
 app.get("/", (req, res) => {
 	res.render("home");
 });
@@ -55,8 +41,9 @@ app.get("/", (req, res) => {
 app.get(
 	"/songs",
 	catchAsync(async (req, res) => {
-		const songs = await Song.find({}).populate("artist");
-		songs.sort(dynamicSort("title"));
+		const songs = await Song.find({})
+			.populate("artist")
+			.sort({ title: "asc" });
 
 		const title = "Our Collections";
 		res.render("main/songs", { songs, title });
@@ -66,8 +53,7 @@ app.get(
 app.get(
 	"/artists",
 	catchAsync(async (req, res) => {
-		const artists = await Artist.find({});
-		artists.sort(dynamicSort("name"));
+		const artists = await Artist.find({}).sort({ name: "asc" });
 		res.render("main/artists", { artists });
 	})
 );
@@ -86,10 +72,12 @@ app.get(
 	catchAsync(async (req, res) => {
 		let { lang } = req.params;
 		lang = lang.charAt(0).toUpperCase() + lang.slice(1);
-		const title = `${lang} Songs`;
 
-		const songs = await Song.find({ language: lang }).populate("artist");
-		songs.sort(dynamicSort("title"));
+		const songs = await Song.find({ language: lang })
+			.populate("artist")
+			.sort({ title: "asc" });
+
+		const title = `${lang} Songs`;
 
 		res.render("main/songs", { songs, title });
 	})
