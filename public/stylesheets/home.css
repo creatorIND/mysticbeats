@@ -43,6 +43,9 @@ body {
 
 .lead {
 	font-family: "Inconsolata";
-	letter-spacing: 3px;
-	text-shadow: 2px 2px 3px black;
+	letter-spacing: 5px;
+	margin-bottom: 40px;
+	font-size: 30px;
+	font-weight: 500;
+	text-shadow: 1px 1px 3px black;
 }
