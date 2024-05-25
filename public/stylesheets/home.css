@@ -28,7 +28,13 @@ body {
 
 .btn:hover {
 	background-color: rgba(255, 255, 255, 0.6);
+	border-color: transparent;
 	color: black;
+}
+
+.btn:focus {
+	outline: 2px solid #c9184a;
+	outline-offset: 2px;
 }
 
 .navbar-brand {
