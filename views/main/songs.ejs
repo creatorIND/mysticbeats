@@ -7,8 +7,7 @@
 			<li class="list-group-item song-list bg-dark mb-2">
 				<div
 					class="row py-2 oneAudio"
-					onclick="togglePlay(document.getElementById('music<%= (i + 1) %>'));"
-				>
+					onclick="togglePlay(document.getElementById('music<%= (i + 1) %>'));">
 					<div class="col-2 text-center">#<%= (i + 1) %></div>
 					<div class="col-4 text-center"><%= songs[i].title %></div>
 					<div class="col-4 text-center">
@@ -18,12 +17,10 @@
 						<audio
 							data-src="<%= songs[i].file %>"
 							id="music<%= (i + 1) %>"
-							preload="metadata"
-						></audio>
+							preload="metadata"></audio>
 						<span
 							style="font-size: 17px"
-							class="material-icons-round"
-						></span>
+							class="material-icons-round"></span>
 					</div>
 				</div>
 			</li>
@@ -33,23 +30,20 @@
 	<div class="col-md-3 text-light d-none d-md-block d-lg-block">
 		<div
 			id="player-card"
-			class="card sticky-top st-elem bg-dark border border-danger mb-3 text-center"
-		>
+			class="card sticky-top st-elem bg-dark border border-danger mb-3 text-center">
 			<img
 				id="player-image"
 				style="height: 60vh; width: 100%; object-fit: cover"
-				src="https://res.cloudinary.com/fedupnow/image/upload/v1625727254/MysticBeats/509f9a3981870975bdd89eb579633ff8_aqpprz.png"
+				src="https://res.cloudinary.com/sujalsinha/image/upload/v1625727254/MysticBeats/509f9a3981870975bdd89eb579633ff8_aqpprz.png"
 				class="card-img-top"
-				alt=""
-			/>
+				alt="" />
 			<div class="card-body">
 				<div>
 					<progress
 						id="player-progress"
 						max="1"
 						value="0"
-						hidden
-					></progress>
+						hidden></progress>
 				</div>
 				<div id="player-controls" hidden>
 					<span
