@@ -1,6 +1,9 @@
 const audios = document.querySelectorAll("audio");
 
 function initProgressBar(audio) {
+	if (!audio.duration || isNaN(audio.duration)) {
+		return;
+	}
 	let progressbar = document.getElementById("player-progress");
 	progressbar.value = audio.currentTime / audio.duration;
 }
