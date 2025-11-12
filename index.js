@@ -1,7 +1,6 @@
 //Mystic Beats
-if (process.env.NODE_ENV !== "production") {
-	require("dotenv").config();
-}
+require("dotenv").config();
+
 const Song = require("./models/song");
 const Artist = require("./models/artist");
 const express = require("express");

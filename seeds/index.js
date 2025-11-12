@@ -1,10 +1,10 @@
 require("dotenv").config();
+
 const mongoose = require("mongoose");
 const { artists } = require("./artists");
 const { songs } = require("./songs");
 const Artist = require("../models/artist");
 const Song = require("../models/song");
-// const dBUrl = "mongodb://localhost:27017/mystic-beats";
 const dBUrl = process.env.DB_URL;
 
 mongoose.connect(dBUrl, {
